@@ -319,6 +319,8 @@ def create_friendsanity_items(item_factory: StardewItemFactory, world_options: S
                                world_options[options.Friendsanity] == options.Friendsanity.option_bachelors
     include_post_marriage_hearts = world_options[options.Friendsanity] == options.Friendsanity.option_all_with_marriage
     exclude_ginger_island = world_options[options.ExcludeGingerIsland] == options.ExcludeGingerIsland.option_true
+    exclude_pet = world_options[options.FriendsanityOnlyBirthdays] == options.FriendsanityOnlyBirthdays.option_true or \
+        exclude_non_bachelors
     heart_size = world_options[options.FriendsanityHeartSize]
     for villager in all_villagers:
         if villager.mod_name not in world_options[options.Mods] and villager.mod_name is not None:
@@ -337,7 +339,8 @@ def create_friendsanity_items(item_factory: StardewItemFactory, world_options: S
                 break
             if heart % heart_size == 0 or heart == heart_cap:
                 items.append(item_factory(f"{villager.name} <3"))
-    if not exclude_non_bachelors:
+
+    if not exclude_pet:
         for heart in range(1, 6):
             if heart % heart_size == 0 or heart == 5:
                 items.append(item_factory(f"Pet <3"))

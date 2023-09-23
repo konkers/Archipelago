@@ -1122,20 +1122,27 @@ class StardewLogic:
         if hearts <= 0:
             return True_()
 
+        only_birthdays = self.options[options.FriendsanityOnlyBirthdays]
         heart_size: int = self.options[options.FriendsanityHeartSize]
         previous_heart = hearts - heart_size
         previous_heart_rule = self.has_relationship(npc, previous_heart)
 
         if npc == NPC.pet:
+            if only_birthdays:
+                return False_()
             earn_rule = self.can_befriend_pet(hearts)
         elif npc == NPC.wizard and ModNames.magic in self.options[options.Mods]:
+            if only_birthdays:
+                return False_()
             earn_rule = self.can_meet(npc) & self.has_lived_months(hearts)
         elif npc in all_villagers_by_name:
             if not self.npc_is_in_current_slot(npc):
                 return previous_heart_rule
             villager = all_villagers_by_name[npc]
             rule_if_birthday = self.has_season(villager.birthday) & self.has_any_universal_love() & self.has_lived_months(hearts // 2)
-            rule_if_not_birthday = self.has_lived_months(hearts)
+            rule_if_not_birthday = False_()
+            if not only_birthdays:
+                rule_if_not_birthday = self.has_lived_months(hearts)
             earn_rule = self.can_meet(npc) & (rule_if_birthday | rule_if_not_birthday)
             if villager.bachelor:
                 if hearts > 8:
@@ -1143,6 +1150,8 @@ class StardewLogic:
                 if hearts > 10:
                     earn_rule = earn_rule & self.can_marry(npc)
         else:
+            if only_birthdays:
+                return False_()
             earn_rule = self.has_lived_months(min(hearts // 2, 8))
 
         return previous_heart_rule & earn_rule

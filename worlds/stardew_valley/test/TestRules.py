@@ -450,7 +450,8 @@ class TestFriendsanityDatingRules(SVTestBase):
     options = {
         options.SeasonRandomization.internal_name: options.SeasonRandomization.option_randomized_not_winter,
         options.Friendsanity.internal_name: options.Friendsanity.option_all_with_marriage,
-        options.FriendsanityHeartSize.internal_name: 3
+        options.FriendsanityHeartSize.internal_name: 3,
+        options.FriendsanityOnlyBirthdays.internal_name: 0,
     }
 
     def test_earning_dating_heart_requires_dating(self):

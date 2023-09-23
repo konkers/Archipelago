@@ -71,6 +71,7 @@ class SVTestBase(WorldTestBase):
             options.Museumsanity.internal_name: options.Museumsanity.option_all,
             options.Friendsanity.internal_name: options.Friendsanity.option_all_with_marriage,
             options.FriendsanityHeartSize.internal_name: 1,
+            options.FriendsanityOnlyBirthdays.internal_name: 0,
             options.NumberOfMovementBuffs.internal_name: 12,
             options.NumberOfLuckBuffs.internal_name: 12,
             options.ExcludeGingerIsland.internal_name: options.ExcludeGingerIsland.option_false,

@@ -397,6 +397,13 @@ class FriendsanityHeartSize(Range):
     default = 4
     # step = 1
 
+# Conditional Setting - Friendsanity not None
+class FriendsanityOnlyBirthdays(Toggle):
+    """If using friendsanity, only NPC with birthdays in accessible seasons will be considered to be in logic.
+    This option also excludes other friends like your pet that do not have birthdays."""
+    internal_name = "friendsanity_only_birthdays"
+    display_name = "Friendsanity Only Birthdays"
+    default = 0
 
 class NumberOfMovementBuffs(Range):
     """Number of movement speed buffs to the player that exist as items in the pool.
@@ -575,6 +582,7 @@ stardew_valley_option_classes = [
     Museumsanity,
     Friendsanity,
     FriendsanityHeartSize,
+    FriendsanityOnlyBirthdays,
     NumberOfMovementBuffs,
     NumberOfLuckBuffs,
     ExcludeGingerIsland,

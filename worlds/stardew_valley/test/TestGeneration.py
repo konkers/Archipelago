@@ -258,6 +258,7 @@ class TestFriendsanityBachelors(SVTestBase):
     options = {
         options.Friendsanity.internal_name: options.Friendsanity.option_bachelors,
         options.FriendsanityHeartSize.internal_name: 1,
+        options.FriendsanityOnlyBirthdays.internal_name: 0,
     }
     bachelors = {"Harvey", "Elliott", "Sam", "Alex", "Shane", "Sebastian", "Emily", "Haley", "Leah", "Abigail", "Penny",
                  "Maru"}
@@ -287,6 +288,7 @@ class TestFriendsanityStartingNpcs(SVTestBase):
     options = {
         options.Friendsanity.internal_name: options.Friendsanity.option_starting_npcs,
         options.FriendsanityHeartSize.internal_name: 1,
+        options.FriendsanityOnlyBirthdays.internal_name: 0,
     }
     excluded_npcs = {"Leo", "Krobus", "Dwarf", "Sandy", "Kent"}
 
@@ -321,6 +323,7 @@ class TestFriendsanityAllNpcs(SVTestBase):
     options = {
         options.Friendsanity.internal_name: options.Friendsanity.option_all,
         options.FriendsanityHeartSize.internal_name: 1,
+        options.FriendsanityOnlyBirthdays.internal_name: 0,
     }
 
     def test_friendsanity_all_items(self):
@@ -353,6 +356,7 @@ class TestFriendsanityAllNpcsExcludingGingerIsland(SVTestBase):
     options = {
         options.Friendsanity.internal_name: options.Friendsanity.option_all,
         options.FriendsanityHeartSize.internal_name: 1,
+        options.FriendsanityOnlyBirthdays.internal_name: 0,
         options.ExcludeGingerIsland.internal_name: options.ExcludeGingerIsland.option_true
     }
 
@@ -388,6 +392,7 @@ class TestFriendsanityAllNpcsWithMarriage(SVTestBase):
     options = {
         options.Friendsanity.internal_name: options.Friendsanity.option_all_with_marriage,
         options.FriendsanityHeartSize.internal_name: 1,
+        options.FriendsanityOnlyBirthdays.internal_name: 0,
     }
 
     def test_friendsanity_all_with_marriage_items(self):
@@ -420,6 +425,7 @@ class TestFriendsanityAllNpcsWithMarriageHeartSize2(SVTestBase):
     options = {
         options.Friendsanity.internal_name: options.Friendsanity.option_all_with_marriage,
         options.FriendsanityHeartSize.internal_name: 2,
+        options.FriendsanityOnlyBirthdays.internal_name: 0,
     }
 
     def test_friendsanity_all_with_marriage_items(self):
@@ -458,6 +464,7 @@ class TestFriendsanityAllNpcsWithMarriageHeartSize3(SVTestBase):
     options = {
         options.Friendsanity.internal_name: options.Friendsanity.option_all_with_marriage,
         options.FriendsanityHeartSize.internal_name: 3,
+        options.FriendsanityOnlyBirthdays.internal_name: 0,
     }
 
     def test_friendsanity_all_with_marriage_items(self):
@@ -496,6 +503,7 @@ class TestFriendsanityAllNpcsWithMarriageHeartSize4(SVTestBase):
     options = {
         options.Friendsanity.internal_name: options.Friendsanity.option_all_with_marriage,
         options.FriendsanityHeartSize.internal_name: 4,
+        options.FriendsanityOnlyBirthdays.internal_name: 0,
     }
 
     def test_friendsanity_all_with_marriage_items(self):
@@ -534,6 +542,7 @@ class TestFriendsanityAllNpcsWithMarriageHeartSize5(SVTestBase):
     options = {
         options.Friendsanity.internal_name: options.Friendsanity.option_all_with_marriage,
         options.FriendsanityHeartSize.internal_name: 5,
+        options.FriendsanityOnlyBirthdays.internal_name: 0,
     }
 
     def test_friendsanity_all_with_marriage_items(self):
